@@ -1,0 +1,1 @@
+JSONRest middleware for accepting JSONQuery request and shuffling data to dojox.data.JsonQueryRestStore
