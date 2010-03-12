@@ -1,0 +1,97 @@
+<div dojoAttachPoint="containerNode">
+	<div dojoAttachPoint="borderContainer" dojoType="dijit.layout.BorderContainer" title="tabnamn" design="sidebar">
+		<div dojoAttachPoint="browse" dojoType="dojox.layout.ExpandoPane" splitter="true" duration="125" region="left" title="Urval" startExpanded="true" maxWidth="400px" style="width: 300px;">
+			<!--<div dojoType="dijit.layout.ContentPane">
+			<p>sök</p>
+			</div>-->
+			<div dojoAttachPoint="grid,selector" query="{}" store="store" oqueryOptions="{cache:true}" selectionMode="single" dojoType="dojox.grid.DataGrid" style="height: 100%; width: 100%;">
+			</div>
+		</div>
+		<div dojoAttachPoint="detailSwitch" dojoType="dijit.layout.StackContainer" region="center">
+			<div href="${helpUrl}" region="center" dojoAttachPoint="help" dojoType="dijit.layout.ContentPane" title="Hjälp">
+				<h1>Entry management</h1>
+			</div>
+			<div dojoType="dijit.layout.BorderContainer" dojoAttachPoint="edit" design="sidebar" title="Editera" id="entryEditor">
+				<div dojoAttachPoint="main" dojoType="dijit.layout.ContentPane" region="center">
+					<fieldset>
+						<legend>headline</legend>
+						<label for="headline">Headline</label>
+						<div dojoAttachPoint="forms" dojoType="dijit.form.Textarea" name="headline"></div>
+						<!--<div id="headlineimagenode"></div>
+						<button dojoAttachPoint="imageUpload" name="headlineimage" uploadUrl="/ssrest/Upload/Image/" displayAfter="entryEditor">Add headline picture</button>
+						<button dojoType="dijit.form.Button" id="headlineimageclear">Remove headline picture</button>
+					</fieldset>
+					<fieldset>
+						<legend>teaser</legend>-->
+						<label for="teaser">Teaser</label>
+						<div dojoAttachPoint="forms" dojoType="dijit.form.Textarea" name="teaser"></div>
+						<!--<div id="teaserimagenode"></div>
+						<button dojoAttachPoint="imageUpload" name="teaserimage" uploadUrl="/ssrest/Upload/Image/" displayAfter="entryEditor">Add teaser picture</button>
+						<button dojoType="dijit.form.Button" id="teaserimageclear">Remove teaser picture</button>-->
+						<label for="color">Headline Color</label>
+						<input type="text" dojoType="dijit.form.TextBox" dojoAttachPoint="forms" name="color"/>
+					</fieldset>
+					<fieldset>
+						<legend>Preemble</legend>
+						<div dojoAttachPoint="forms" dojoType="dijit.Editor" name="preemble" styleSheets="/css/editor.css" extraPlugins="['|','createLink','unlink','delete',
+	 '|',
+	{name:  'dojox.editor.plugins.UploadImage',
+	 command: 'uploadImage',
+	 uploadUrl:'/ssrest/Upload/Image/',
+	 downloadPath:'/images/',
+	 tempImageUrl:'/gui/busy.gif'},'|','formatBlock',{name:  'viewsource',stripScripts:false},'showblocknodes','breadcrumb']">
+							<p>
+								Preemble
+							</p>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Expander</legend>
+						<label for="expandertext">Expander text</label>
+						<input type="text" dojoType="dijit.form.TextBox" dojoAttachPoint="forms" name="expandertext"/><br/>
+						<label for="body">Body</label>
+						<div dojoAttachPoint="forms,bodyEditor" dojoType="dijit.Editor" name="body" styleSheets="/css/editor.css" extraPlugins="['|','createLink','unlink','delete',
+	 '|',
+	{name:  'dojox.editor.plugins.UploadImage',
+	 command: 'uploadImage',
+	 uploadUrl:'/ssrest/Upload/Image/',
+	 downloadPath:'/images/',
+	 tempImageUrl:'/gui/busy.gif'},'|','formatBlock',{name:  'viewsource',stripScripts:false},'showblocknodes','breadcrumb']">
+							<p>
+								Body
+							</p>
+						</div>
+					<fieldset>
+						<legend>Bottom Image</legend>
+						<div id="bottomimagenode"></div>
+						<button dojoAttachPoint="imageUpload" force="html" name="bottomimage" uploadUrl="/ssrest/Upload/Image/" displayAfter="entryEditor">Add bottom picture</button>
+						<button dojoType="dijit.form.Button" id="bottomimageclear">Remove bottom picture</button>
+					</fieldset>
+					<fieldset>
+						<legend>Sidebar Image</legend>
+						<div id="sidebarimagenode"></div>
+						<button dojoAttachPoint="imageUpload" force="html" name="sidebarimage" uploadUrl="/ssrest/Upload/Image/" displayAfter="entryEditor">Add sidebar picture</button>
+						<button dojoType="dijit.form.Button" id="sidebarimageclear">Remove sidebar picture</button>
+					</fieldset>
+				</fieldset>
+				</div>
+				<div dojoAttachPoint="buttonBar" class="buttonbar" dojoType="dijit.layout.ContentPane" region="bottom" splitter="false" style="height: 27px; padding: 0; border: 0; margin: 0">
+				</div>
+				<div dojoAttachPoint="detail" dojoType="dojox.layout.ExpandoPane" splitter="true" duration="125" region="right" title="Detaljer" startExpanded="false" maxWidth="400px" style="width: 300px">
+					<div dojoAttachPoint="accordion" dojoType="dijit.layout.AccordionContainer" title="innehåll">
+						<div dojoAttachPoint="namePane" dojoType="dijit.layout.ContentPane" title="Rubriker">
+							<label for="active">
+								Aktiv
+							</label>
+							<input dojoAttachPoint="forms" value="active" name="active" dojoType="dijit.form.CheckBox"/>
+							<label for="name">
+								Name
+							</label>
+							<input type="text" dojoAttachPoint="forms" name="name" dojoType="dijit.form.TextBox" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

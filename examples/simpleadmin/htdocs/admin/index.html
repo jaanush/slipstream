@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Brandboxer admin</title>
+<style type="text/css">
+	@import "/lib/dojo-1.4.1/dojo/resources/dojo.css";
+	@import "/lib/dojo-1.4.1/dijit/themes/dijit.css";
+	@import "/lib/dojo-1.4.1/dijit/themes/tundra/tundra.css";
+	@import "/lib/dojo-1.4.1/dojox/grid/resources/Grid.css";
+    @import "/lib/dojo-1.4.1/dojox/grid/resources/tundraGrid.css";
+    @import "/lib/dojo-1.4.1/dojox/layout/resources/ExpandoPane.css";
+    @import "/lib/dojo-1.4.1/dojox/editor/plugins/resources/editorPlugins.css";
+    @import "/lib/dojo-1.4.1/dojox/editor/plugins/resources/css/ShowBlockNodes.css";
+    @import "/lib/dojo-1.4.1/dojox/editor/plugins/resources/css/Breadcrumb.css";
+    @import "/lib/dojoc/_editor/plugins/plugins.css";
+    @import "/lib/dojo-1.4.1/dojox/form/resources/CheckedMultiSelect.css";
+    @import "/lib/dojo-1.4.1/dojox/form/resources/BusyButton.css";
+    @import "/lib/dojo-1.4.1/dijit/themes/tundra/form/Button.css";
+    @import "/lib/dojo-1.4.1/dojox/form/resources/FileUploader.css";
+		@import "/lib/dojo-1.4.1/dojox/grid/enhanced/resources/tundraEnhancedGrid.css";
+		@import "/lib/dojo-1.4.1/dojox/grid/enhanced/resources/EnhancedGrid_rtl.css";
+
+            .dojoxGrid table { margin: 0; } html, body { width: 100%; height: 100%;
+            margin: 0; }
+			fieldset	{ border: 1px solid #CCCCCC; margin: 4px; padding: 4px}
+</style>
+<script type="text/javascript" src="/lib/dojo-1.4.1-src/dojo/dojo.js" djConfig="isDebug: false, parseOnLoad: true, usePlainJson: true"></script>
+<script type="text/javascript">
+	dojo.registerModulePath("slipstream", "/lib/slipstream");
+	dojo.registerModulePath("site", "/lib/site");
+
+/*
+dojo.require('dojox.data.PersevereStore');
+store=dojox.data.PersevereStore.getStores("/ssrest/",true);
+*/
+
+dojo.require('dojox.data.ClientFilter');
+dojo.require('dojox.data.JsonRestStore');
+dojo.require('dojox.rpc.Service');
+//dojo.require('dojox.rpc.JsonRPC');
+dojo.require('dojox.grid.DataGrid');
+
+dojo.require('dijit.layout.BorderContainer');
+dojo.require('dijit.layout.ContentPane');
+dojo.require('dijit.layout.TabContainer');
+dojo.require('slipstream.view.Panel');
+dojo.require('dojox.layout.ExpandoPane');
+dojo.require('dijit.layout.AccordionContainer');
+dojo.require('dijit.form.CheckBox');
+dojo.require('dijit.form.TextBox');
+dojo.require('dojox.form.DropDownSelect');
+dojo.require('dijit.form.Textarea');
+
+dojo.require('dijit.Editor');
+dojo.require("dijit._editor.plugins.FontChoice");
+dojo.require("dijit._editor.plugins.LinkDialog");
+dojo.require("dijit._editor.plugins.ViewSource");
+dojo.require("dojox.editor.plugins.UploadImage");
+dojo.require("dojox.editor.plugins.ShowBlockNodes");
+dojo.require("dojox.editor.plugins.Breadcrumb");
+dojo.require("dojox.form.FileUploader");
+
+/*
+var _service=new dojox.rpc.Service('/smd.php?domain=ppl');
+var sserv=_service.get;
+sserv.put=_service.put;
+sserv.post=_service.post;
+sserv.delete=_service.delete;
+store=new dojox.data.JsonRestStore({service: sserv,idAttribute: 'id',labelAttribute: 'name'});
+*/
+store=new dojox.data.JsonRestStore({target: '/ssrest/user',idAttribute: 'id',labelAttribute: 'name'});
+//store.fetch({query:{}});
+function init(){
+		var outerFrame=new dijit.layout.BorderContainer({
+			style: 'width: 100%; height: 100%; border: 0; overflow: hidden'
+		});
+		var header=new dijit.layout.ContentPane({
+			title:"Header",
+			region: 'top',
+			style: 'height: 20px; border: 0; margin: 0',
+			content: '<h1>Slipstream</h1>'
+		});
+		outerFrame.addChild(header);
+		var tabContainer=new dijit.layout.TabContainer({
+			title:"Middle",
+			region: 'center',
+			style: 'overflow: hidden'
+		});
+		outerFrame.addChild(tabContainer);
+		var footer=new dijit.layout.ContentPane({
+			title:"Footer",
+			region: 'bottom',
+			content: 'footer'
+		});
+		outerFrame.addChild(footer);
+		entryView=new slipstream.view.Panel({
+			title: 'Inlägg',
+			style: 'overflow: hidden',
+			store: store,
+			createElement: true,
+			helpUrl: '/lib/site/view/help/sv/Entry.html',
+			structure: [{
+				defaultCell: { width: 8, editable: false, type: dojox.grid.cells._Widget },
+				rows:
+				[
+					{
+						name: 'Order',
+						field: 'order',
+						//hidden: true,
+						width: '50px',
+						sortDesc: true,
+						sort: 'desc'
+					},
+					{
+						name: 'Longname',
+						field: 'name',
+						width: '150px'
+					},
+					{
+						name: 'Active',
+						field: 'active',
+						width: '50px'
+					}
+			]}],
+			templatePath: dojo.moduleUrl("site.view", "templates/Entry.html"),
+			attributeMap: {
+				structure: "grid"
+			}
+		});
+		tabContainer.addChild(entryView);
+		dojo.body().appendChild(outerFrame.domNode);
+		outerFrame.startup();
+		//dojo.publish('ss/renderDone');
+		dojo.subscribe(dijit.byId('grid1').rowMovedTopic, function(r){
+			console.log(r);
+			var _grid=r.grid;
+			var _store=_grid.store;
+			var _order=_grid._by_idx[0].item.order||0;
+			dojo.forEach(_grid._by_idx,function(_row,_idx){
+				if(_row.item['order']!=_order+_idx){
+					console.log('Setting order on',_row.item,'to',_order+_idx);
+					_store.setValue(_row.item,'order',_order+_idx);
+				}
+				/*if(_store.hasAttribute(_item,'order')){
+					
+				} else {
+					_store.setValue(_item,'order',_order+_idx);
+				}*/
+			});
+			_store.save();
+		});
+}
+dojo.addOnLoad(init);
+		
+
+</script>
+</head>
+<body class="tundra">
+</body>
+</html>

@@ -14,7 +14,8 @@ class Configuration extends \Slipstream\Common\Configuration{
         			'basepath'=>SS_ROOT.'/htdocs/images/',
         			'baseurl'=>'/images/')
         		),
-        	'jsonRestExposedEntities'=>array()
+        	'jsonRestExposedEntities'=>array(),
+        	'jsonRestQueryParsers'=>array('JsonPath')
         	)
         );
     }

@@ -1,0 +1,14 @@
+<?php
+$domaindef=array(
+	'legacy'=>array(
+		'type'=>'doctrine',
+		'class'=>'\demo\Entities\User'
+	),
+	'user'=>array(
+		'type'=>'dataobject',
+		'class'=>'\data\DataObj\User',
+		'schema'=>array(
+			'idAttribute'=>'id',
+			'labelAttribute'=>'name')
+	)
+);

@@ -6,6 +6,7 @@ class DomainMaster extends AbstractComponent{
 	protected $_entityManager;
 	protected $_dom;
 	protected $_domain;
+	protected $_injector;
 
 	public function dispatch(){
 		$this->_domain=$this->_dom->domain($this->name());
@@ -15,9 +16,11 @@ class DomainMaster extends AbstractComponent{
 	public function __construct(
 		\Slipstream\Common\ConfigurationInterface $conf,
 		\Slipstream\Common\DomainObjectManager $domainObjectManager,
-		\Slipstream\Common\Log\Handler $log){
+		\Slipstream\Common\Log\Handler $log,
+		\Slipstream\Common\Injector\Injector $injector){
 		$this->_configuration=$conf;
 		$this->_dom=$domainObjectManager;
+		$this->_injector=$injector;
 		parent::__construct($log);
 	}
 
@@ -26,7 +29,12 @@ class DomainMaster extends AbstractComponent{
 	}
 
 	public function get(){
+		$_query=trim(substr($_req=rawurldecode($this->requestUri()),strpos($_req,$_url=$this->url())+strlen($_url)),'/');
+		$this->log()->log($_query);
+		$_parser=$this->injector()->get('Slipstream\JsonRest\JsonPath\Parser');
+		$_parser->parse($_query);
 		$response=$this->getDomain()->getAll();
+		$response=$_parser->parseData($response);
 		//$this->log()->log(json_encode($response));
 		return new \k_JsonResponse($response);
 	}
@@ -41,5 +49,9 @@ class DomainMaster extends AbstractComponent{
 
 	public function getDomain(){
 		return  $this->_domain;
+	}
+
+	protected function injector(){
+		return $this->_injector;
 	}
 }
