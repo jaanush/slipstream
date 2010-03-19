@@ -19,7 +19,7 @@ dojo.declare("slipstream.view.Panel", [slipstream.layout._TemplatedLayoutWidget]
 	isContainer: true,
 	isLayoutContainer: true,
 	widgetsInTemplate: true,
-	doLayout: false,
+	doLayout: true,
 	baseClass: "dijitContentPane",
 	language: 'sv',
 	prefix: '',
@@ -47,7 +47,9 @@ dojo.declare("slipstream.view.Panel", [slipstream.layout._TemplatedLayoutWidget]
 	
 	buildRendering: function(){
 		this.log('slipstream.view.Panel::buildRendering for '+this.title);
+		console.info(this.selector,'Selector');
 		this.inherited(arguments);
+		console.info(this.selector,'Selector');
 	},
 	
 	postCreate: function(){
@@ -273,7 +275,13 @@ dojo.declare("slipstream.view.Panel", [slipstream.layout._TemplatedLayoutWidget]
 		
 	},
 	_connectSelector: function(){
-		if(this.selector!=undefined) dojo.connect(this.selector, 'onRowClick', this, function(e){this._selectItem(e.grid.getItem(e.rowIndex))});
+		if(this.selector!=undefined) dojo.connect(this.selector, 'onClick', this, function(e){
+			if(e.rowIndex!=undefined){
+				this.selector.selection.deselectAll();
+				this.selector.selection.addToSelection(e.rowIndex);
+				this._selectItem(e.grid.getItem(e.rowIndex));
+			}
+		});
 		this.log('Connecting grid selector');
 	},
 	_saveSelection: function(){

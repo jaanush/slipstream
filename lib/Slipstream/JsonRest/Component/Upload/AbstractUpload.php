@@ -19,8 +19,8 @@ class AbstractUpload extends \Slipstream\JsonRest\Component\AbstractComponent{
 
 	protected function formatReturnData($data=array()){
 		if($this->header('user-agent')=='Shockwave Flash'){
-			array_walk($data,function(&$val,$key){$val=$key.'='.$val;});
-			return '<textarea>'.implode(',',$data).'</textarea>';
+				array_walk($data,function(&$val,$key){$val=$key.'='.$val;});
+			return implode(',',$data);
 		} else {
 			return '<textarea>'.json_encode($data).'</textarea>';
 		}

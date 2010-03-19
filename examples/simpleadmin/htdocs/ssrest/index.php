@@ -14,6 +14,7 @@ k()
   // Dispatch request
   ->run('Slipstream\JsonRest\Component\Root')
   ->out();
+//$i->get('Slipstream\Common\Log\Handler')->log($i->get('Slipstream\Common\ConfigurationInterface'),'Execution time');
 $i->get('Slipstream\Common\Log\Handler')->log(microtime(true)-$ss_timer,'Execution time');
 ob_end_flush ();
 ?>

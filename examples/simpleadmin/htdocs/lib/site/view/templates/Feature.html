@@ -1,0 +1,66 @@
+<div dojoAttachPoint="containerNode">
+    <div dojoAttachPoint="borderContainer" dojoType="dijit.layout.BorderContainer" title="tabnamn" design="sidebar">
+        <div dojoAttachPoint="browse" dojoType="dojox.layout.ExpandoPane" splitter="true" duration="125" region="left" title="Urval" startExpanded="true" maxWidth="400px" style="width: 300px;">
+            <!--<div dojoType="dijit.layout.ContentPane">
+            <p>sök</p>
+            </div>-->
+			<!--<div id="grid1" jsId="grid1" dojoAttachPoint="grid,selector" query="{id:'*'}" store="store" oqueryOptions="{cache:true}" selectionMode="single" dojoType="dojox.grid.DataGrid" style="height: 100%; width: 100%;">
+			</div>-->
+            <div dojoAttachPoint="selector,grid" sortFields="[{attribute: 'order', descending: true}]" query="{id:'*'}" structure="featureStructure" store="featureStore" singleClickEdit="true" selectionMode="single" dojoType="dojox.grid.EnhancedGrid" plugins="{nestedSorting: true, dnd: true}" style="height: 100%">
+            </div>
+        </div>
+        <div dojoAttachPoint="detailSwitch" dojoType="dijit.layout.StackContainer" region="center">
+            <div href="${helpUrl}" region="center" dojoAttachPoint="help" dojoType="dijit.layout.ContentPane" title="Hjälp">
+                <h1>Entry management</h1>
+            </div>
+            <div dojoType="dijit.layout.BorderContainer" dojoAttachPoint="edit" design="sidebar" title="Editera" id="featureEditor">
+                <div dojoAttachPoint="main" dojoType="dijit.layout.ContentPane" region="center">
+                    
+                    <fieldset>
+                        <legend>
+                            Feature
+                        </legend>
+                        <div dojoAttachPoint="forms" dojoType="dijit.Editor" name="preemble" styleSheets="/css/editor.css" 
+						extraPlugins="[
+							'|',
+							'createLink',
+							'unlink',
+							'delete',
+							'|',
+							{ name:  'dojox.editor.plugins.UploadImage',
+							command: 'uploadImage',
+							uploadUrl: '/ssrest/Upload/Feature/',
+							downloadPath: '/features/',
+							tempImageUrl: '/gui/busy.gif' },
+							'|',
+							'formatBlock',
+							{ name:  'viewsource',
+							stripScripts:false },
+							'showblocknodes',
+							'breadcrumb']">
+                            <p>
+                                Feature
+                            </p>
+                        </div>
+                    </fieldset>
+                </div>
+                <div dojoAttachPoint="buttonBar" class="buttonbar" dojoType="dijit.layout.ContentPane" region="bottom" splitter="false" style="height: 27px; padding: 0; border: 0; margin: 0">
+                </div>
+                <div dojoAttachPoint="detail" dojoType="dojox.layout.ExpandoPane" splitter="true" duration="125" region="right" title="Detaljer" startExpanded="false" maxWidth="400px" style="width: 300px">
+                    <div dojoAttachPoint="accordion" dojoType="dijit.layout.AccordionContainer" title="innehåll">
+                        <div dojoAttachPoint="namePane" dojoType="dijit.layout.ContentPane" title="Rubriker">
+                            <label for="active">
+                                Aktiv
+                            </label>
+                            <input dojoAttachPoint="forms" value="active" name="active" dojoType="dijit.form.CheckBox"/>
+                            <label for="name">
+                                Name
+                            </label>
+                            <input type="text" dojoAttachPoint="forms" name="name" dojoType="dijit.form.TextBox" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

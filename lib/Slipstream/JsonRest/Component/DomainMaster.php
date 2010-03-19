@@ -31,10 +31,12 @@ class DomainMaster extends AbstractComponent{
 	public function get(){
 		$_query=trim(substr($_req=rawurldecode($this->requestUri()),strpos($_req,$_url=$this->url())+strlen($_url)),'/');
 		$this->log()->log($_query);
-		$_parser=$this->injector()->get('Slipstream\JsonRest\JsonPath\Parser');
-		$_parser->parse($_query);
 		$response=$this->getDomain()->getAll();
-		$response=$_parser->parseData($response);
+		if($_query){
+			$_parser=$this->injector()->get('Slipstream\JsonRest\JsonPath\Parser');
+			$_parser->parse($_query);
+			$response=$_parser->parseData($response);
+		}
 		//$this->log()->log(json_encode($response));
 		return new \k_JsonResponse($response);
 	}

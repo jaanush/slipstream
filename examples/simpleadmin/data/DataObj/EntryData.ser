@@ -1,4 +1,4 @@
-a:6:{i:1;a:10:{s:8:"headline";s:31:"Cutting-edge ideas materialized";s:2:"id";i:1;s:6:"teaser";s:0:"";s:4:"body";s:36:"<br _moz_editor_bogus_node="TRUE" />";s:6:"active";b:1;s:4:"name";s:5:"Intro";s:8:"preemble";s:645:"						<div class="col1"> </div>
+a:6:{i:1;a:9:{s:8:"headline";s:31:"Cutting-edge ideas materialized";s:2:"id";i:1;s:6:"teaser";s:0:"";s:4:"body";s:36:"<br _moz_editor_bogus_node="TRUE" />";s:6:"active";b:1;s:4:"name";s:5:"Intro";s:8:"preemble";s:645:"						<div class="col1"> </div>
 						<div class="col2">
 							<p>Sensations United works toward the articulated goal of identifying and amplifying sensations surrounding trademarks. Sensationalizing brand experiences by<br /></p>
 						</div>
@@ -11,13 +11,13 @@ Our work is based on a full-blown 360-degree holistic mind-set;</p>
 							<p> we deliver high-end output within consumer and lifestyle marketing, 
 product design and conceptual communication releasing sensations beyond 
 reason.</p>
-						</div>";s:12:"expandertext";s:0:"";s:5:"color";s:7:"#5E0042";s:5:"order";i:18;}i:2;a:8:{s:6:"active";b:1;s:4:"name";s:9:"Disclamer";s:2:"id";i:2;s:6:"teaser";s:0:"";s:4:"body";s:2105:"<p>Brandboxer in this BB, reserves the right, at its sole discretion, to change, modify, add or remove portions of these Terms of Use, at any time. It is your responsibility to check these Terms of Use periodically for changes. Your continued use of the Site following the posting of changes will mean that you accept and agree to the changes. As long as you comply with these Terms of Use, BB grants you a personal, non-exclusive, non-transferable, limited privilege to enter and use the Site.</p>
+						</div>";s:12:"expandertext";s:0:"";s:5:"color";s:7:"#5E0042";}i:2;a:6:{s:6:"active";b:1;s:4:"name";s:9:"Disclamer";s:2:"id";i:2;s:6:"teaser";s:0:"";s:4:"body";s:2105:"<p>Brandboxer in this BB, reserves the right, at its sole discretion, to change, modify, add or remove portions of these Terms of Use, at any time. It is your responsibility to check these Terms of Use periodically for changes. Your continued use of the Site following the posting of changes will mean that you accept and agree to the changes. As long as you comply with these Terms of Use, BB grants you a personal, non-exclusive, non-transferable, limited privilege to enter and use the Site.</p>
 						<h3>Content</h3>
 						<p>All text, graphics, user interfaces, visual interfaces, photographs, trademarks, logos, sounds, music, artwork and computer code (collectively, “Content”), including but not limited to the design, structure, selection, coordination, expression, “look and feel” and arrangement of such Content, contained on the Site is owned, controlled or licensed by or to BB, and is protected by trade dress, copyright, patent and trademark laws, and various other intellectual property rights and unfair competition laws.</p>
 
 						<p>Except as expressly provided in these Terms of Use, no part of the Site and no Content may be copied, reproduced, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted or distributed in any way (including “mirroring”) to any other computer, server, Web site or other medium for publication or distribution or for any commercial enterprise, without BB’s express prior written consent.</p>
 						<p>You may use information on BB products and services (such as data sheets, knowledge base articles, and similar materials) purposely made available by BB for downloading from the Site, provided that you (1) not remove any proprietary notice language in all copies of such documents, (2) use such information only for your personal, non-commercial informational purpose and do not copy or post such information on any networked computer or broadcast it in any media, (3) make no modifications to any such information, and (4) not make any additional representations or warranties relating to such documents.</p>
-";s:12:"expandertext";s:16:"Legal Disclaimer";s:5:"order";i:15;s:5:"color";s:0:"";}i:3;a:7:{s:6:"active";b:1;s:4:"name";s:7:"Contact";s:2:"id";i:3;s:4:"body";s:312:"<img id="addresslogo" src="/gui/logo-su.png" style="top: 135px;" />
+";s:12:"expandertext";s:16:"Legal Disclaimer";}i:3;a:4:{s:6:"active";b:1;s:4:"name";s:7:"Contact";s:2:"id";i:3;s:4:"body";s:312:"<img id="addresslogo" src="/gui/logo-su.png" style="top: 135px;" />
 						<div class="address">
 						<p>SENSATIONSUNITED AB<br />
 PERSGATAN 10B<br />
@@ -25,7 +25,7 @@ PERSGATAN 10B<br />
 SWEDEN</p>
 <p>Phone: +46 31 926 459<br />
 E-mail: <a href="mailto:contact@sensationsunited.com">contact@sensationsunited.com</a></p></div>
-";s:5:"order";i:17;s:5:"color";s:0:"";s:12:"expandertext";s:0:"";}i:4;a:10:{s:5:"color";s:7:"#2C2233";s:12:"expandertext";s:9:"Read more";s:6:"active";b:1;s:4:"name";s:5:"We do";s:8:"headline";s:5:"We do";s:6:"teaser";s:221:"<span class="uc">Communication, consumer products, retail concepts and visual merchandising</span><br/>
+";}i:4;a:9:{s:5:"color";s:7:"#2C2233";s:12:"expandertext";s:9:"Read more";s:6:"active";b:1;s:4:"name";s:5:"We do";s:8:"headline";s:5:"We do";s:6:"teaser";s:221:"<span class="uc">Communication, consumer products, retail concepts and visual merchandising</span><br/>
 Creating customer appeal and total brand experience by optimizing the perception,<br/>
 image and success of the brand";s:2:"id";i:4;s:8:"preemble";s:6:"<br />";s:4:"body";s:1315:"						<div class="col1"> </div>
 						<div class="col2">
@@ -54,11 +54,11 @@ launch and have a complete integration with other parts of the marketing
 creating effective penetration of current target groups, with measurable
  results.<br />
 </p>
-						</div>";s:5:"order";i:16;}i:5;a:9:{s:5:"color";s:7:"#005869";s:12:"expandertext";s:0:"";s:6:"active";b:1;s:4:"name";s:8:"Research";s:8:"headline";s:12:"Research lab";s:6:"teaser";s:153:"<span class="uc">Market trends, consumer behaviour and attitudes</span><br/>
-Ïdentifying cultural and consumer trends for long-term business development";s:8:"preemble";s:293:"<div style="clear: both; margin-left: 196px; width: 568px;"><p>Our research lab provide extensive marketing and consumer behavior research to establish tangible and measurable objectives and results.<img height="700" id="img_1269003344530" src="/images/_MG_1563.jpg" width="467" /></p></div>
+						</div>";}i:5;a:8:{s:5:"color";s:7:"#005869";s:12:"expandertext";s:0:"";s:6:"active";b:1;s:4:"name";s:8:"Research";s:8:"headline";s:12:"Research lab";s:6:"teaser";s:153:"<span class="uc">Market trends, consumer behaviour and attitudes</span><br/>
+Ïdentifying cultural and consumer trends for long-term business development";s:8:"preemble";s:211:"<div style="clear: both; margin-left: 196px; width: 568px;"><p>Our research lab provide extensive marketing and consumer behavior research to establish tangible and measurable objectives and results.</p></div>
 
-";s:2:"id";i:5;s:5:"order";i:13;}i:6;a:10:{s:6:"active";b:1;s:4:"name";s:6:"We are";s:8:"headline";s:6:"We are";s:6:"teaser";s:142:"<span class="uc">Strategic and conceptual design agency</span><br/>
-A super creative group of design doers and strategic communication genious";s:8:"preemble";s:84:"<img height="428" id="img_1269002223150" src="/images/feature-02.jpg" width="963" />";s:2:"id";i:6;s:4:"body";s:988:"						<div class="col1"> </div>
+";s:2:"id";i:5;}i:6;a:9:{s:6:"active";b:1;s:4:"name";s:6:"We are";s:8:"headline";s:6:"We are";s:6:"teaser";s:142:"<span class="uc">Strategic and conceptual design agency</span><br/>
+A super creative group of design doers and strategic communication genious";s:8:"preemble";s:0:"";s:2:"id";i:6;s:4:"body";s:988:"						<div class="col1"> </div>
 						<div class="col2">
 							<p>Our business philosophy is based on commercial thinking and – by creating commercial design and super developed conceptual ideas. We believe that good design concepts shall mirror the company behind it in order to create long-lasting emotional relations with the consumer.<br /></p>
 						</div>
@@ -68,4 +68,4 @@ A super creative group of design doers and strategic communication genious";s:8:
 						</div>
 						<div class="col2">
 							<p> in order to get the message/core values reaching further and creating effective penetration of current target groups, with measurable results.</p><p>Connecting the brand to the product to make a lifelong sustainable O-glow.<br /></p>
-						</div>";s:12:"expandertext";s:9:"Read more";s:5:"color";s:7:"#00856A";s:5:"order";i:14;}}
+						</div>";s:12:"expandertext";s:9:"Read more";s:5:"color";s:7:"#00856A";}}
