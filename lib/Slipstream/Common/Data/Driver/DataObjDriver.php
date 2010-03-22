@@ -10,9 +10,14 @@ class DataObjDriver extends AbstractDriver{
 	protected $primary='id';
 	protected $indexSource=array();
 	protected $index=array();
+	protected $_log;
 
-	public function __construct($source=null){
-		$this->load($source);
+	public function __construct(\Slipstream\Common\Log\Handler $log){
+		$this->_log($log);
+	}
+
+	protected function log(){
+		return $this->_log;
 	}
 
 	public function setMetadata($name,$data){
@@ -100,6 +105,7 @@ class DataObjDriver extends AbstractDriver{
 			$data=$id;
 			$id=$data[$this->getIdAttr()];
 		}
+		//$this->log()->log($data,'Setting data');
 		$this->isDirty=true;
 		$this->removeFromIndex($data);
 		$this->addToIndex($data);
